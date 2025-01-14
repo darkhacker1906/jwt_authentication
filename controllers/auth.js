@@ -1,5 +1,6 @@
  const Auth=require('../models/auth')
  const { sign } = require('jsonwebtoken');
+ const {setUser,getUser}    =require('../service/auth')
  const handleSignup=async (req, res) => {
     const data = req.body;
     const user = await Auth.findOne({ email: data.email });
